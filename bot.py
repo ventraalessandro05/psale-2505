@@ -1,7 +1,7 @@
 import requests
 from playwright.sync_api import sync_playwright
 
-NTFY_TOPIC = "ps5-bot"
+NTFY_TOPIC = "psale-2505"
 
 SITI = {
     "PS Direct - Slim Digital 30th Anniversary": "https://www.playstation.com/it-it/ps5/playstation-digital-edition-console-model-group-slim/product/30th-anniversary-limited-edition-bundle/",
