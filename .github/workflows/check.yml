@@ -1,0 +1,26 @@
+name: Controllo PS5
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa librerie e browser
+        run: |
+          pip install playwright requests
+          playwright install chromium
+
+      - name: Avvia il bot
+        run: python bot.py
